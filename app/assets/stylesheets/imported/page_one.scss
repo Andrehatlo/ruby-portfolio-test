@@ -1,0 +1,150 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+
+$hero-height: 100vh; // hero height
+$hero-inner-width: 1100px; // hero content width
+$col-hero-button: #A06B5B; // btn color
+$button-margin: 30px; // btn spacing
+$imageurl: 'https://images.pexels.com/photos/713829/pexels-photo-713829.jpeg?w=2500&h=500&dpr=2&auto=compress&cs=tinysrgb 2x';
+
+@import url('https://fonts.googleapis.com/css?family=Arvo');
+
+/* ==========================================================================
+   GRID
+   ========================================================================== */
+
+.grid-y {
+    display: flex;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+
+#hero {
+  height: $hero-height;
+  background: #f7f7f7 url($imageurl) no-repeat center center;
+  background-repeat: no-repeat;
+    -webkit-animation: fadein 2s;
+       -moz-animation: fadein 2s;
+        -ms-animation: fadein 2s;
+         -o-animation: fadein 2s;
+            animation: fadein 2s;
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+  background-size: cover;
+  position: relative;
+  text-align: center;
+
+/* content
+   ========================================================================== */
+
+  .hero-content {
+    max-width: $hero-inner-width;
+    font-family: 'Arvo', serif;
+    padding: 1em 2em;
+    margin: auto;
+    color: white;
+    text-align: center;
+    z-index: 1;
+
+    h1 { font-size: 5em; line-height: 1.1em; margin: 0 0 40px 0; font-weight: bold;  }
+        // mobile
+        @media screen and (max-width: 768px) {
+        h1 { font-size: 2.3em; }
+    }
+
+  /* buttons
+     ========================================================================== */
+
+    @media screen and (min-width: 560px) {
+      .button:first-of-type { margin-right: $button-margin; }
+    }
+    .button {
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 1em;
+      font-weight: normal;
+      font-style: normal;
+      text-transform: uppercase;
+      padding: .85em 1.5em;
+      margin: 0;
+      color: #fff;
+      background-color: $col-hero-button;
+
+          &:hover { background-color: lighten($col-hero-button,5); }
+    }
+    @media screen and (max-width: 768px) {
+        .button:first-of-type { clear: both; }
+        .button { font-size: 1em; margin: 0 0 15px 0; }
+    }
+
+  }
+
+}
+
+/* extras: button hover
+   ========================================================================== */
+
+.hvr-outline-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  //box-shadow: 0 0 1px transparent;
+  position: relative;
+}
+.hvr-outline-out:before {
+  content: '';
+  position: absolute;
+  border: $col-hero-button solid 1px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: top, right, bottom, left;
+  transition-property: top, right, bottom, left;
+}
+.hvr-outline-out:hover:before, .hvr-outline-out:focus:before, .hvr-outline-out:active:before {
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -8px;
+}
+
+/* typography
+   ========================================================================== */
+
+h1, h2, h3, h4, h5 { font-family: 'Arvo'; font-style: normal; }

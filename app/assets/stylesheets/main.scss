@@ -1,0 +1,334 @@
+@import 'imported/rain';
+@import 'imported/shiny-btn';
+
+
+/* ==========================================================================
+   VARIABLES
+ ========================================================================== */
+
+$sticky-nav-height: rem-calc(1);
+
+/* ==========================================================================
+   LAYOUT AND DEFAULTS
+   ========================================================================== */
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: helvetica neue, helvetica, arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+body {
+  background-color: #333d4b;
+  margin: 0;
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  padding-top: $sticky-nav-height;
+}
+
+
+/* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
+ a {
+   display: inline-block;
+   text-decoration: none;
+   color: white;
+   transition: opacity .125s linear;
+
+   &:hover {
+     opacity: 0.5;
+     cursor: pointer;
+     transition: opacity .125s linear;
+   }
+
+   &:visited {
+     color: inherit;
+     text-decoration: none;
+   }
+ }
+
+
+.first-container {
+  background-color: #333d4b;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+}
+
+.nav-container {
+  height: rem-cal(58);
+  width: 100%;
+  color: white;
+  position: fixed;
+  text-transform: uppercase;
+  tansition: background-color 0.2 linear;
+
+  &.solid-nav {
+    background-color: black;
+    transition: background-color 0.2s linear;
+    box-shadow: 0 0 4px grey;
+  }
+
+  &.title-bar {
+    background-color: none;
+  }
+}
+
+.nav-container.solid {
+  background-color: #490D40 !important;
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 4px grey;
+}
+
+
+
+li .is-active {
+  color: pink;
+}
+
+// .no-js {
+//   @include breakpoint(small only) {
+//     .top-bar {
+//       display: none;
+//     }
+//   }
+//
+//   @include breakpoint(medium) {
+//     .title-bar {
+//       display: none;
+//     }
+//   }
+// }
+
+[data-sticky] {
+  width:100%;
+}
+
+.sticky-container {
+  z-index: 5;
+}
+
+/* ==========================================================================
+   CONTENT
+   ========================================================================== */
+
+.page {
+  /* Page 100% height (*1) */
+  min-height: 100vh;
+
+  /* Horizontal & vertical centering (*2) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // border: solid 2px red;
+}
+
+
+.flex-container {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.flex-item {
+  text-align: center;
+  justify-content: center;
+}
+
+h3 .inner .flex-item {
+  color: #eee;
+}
+
+
+.content {
+   /* Extend content... (*3) */
+   width: 100%;
+
+   /* ... but not too much. (*4) */
+   max-width: 770px;
+
+   /* Content background */
+   // background: #fff;
+}
+
+.iefix {
+  display: -ms-flexbox;
+  -ms-flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+    .wrapper {
+      max-width: rem-calc(1200);
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .wrapper {
+      margin: auto;
+      max-width: rem-calc(1200);
+    }
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+    .wrapper {
+      margin: auto;
+      max-width: rem-calc(1200);
+    }
+}
+
+
+/* ==========================================================================
+   DEVISE
+   ========================================================================== */
+.form-container {
+  max-width: rem-calc(960);
+  margin: 0 auto;
+  padding: 0 10px 0 10px;
+  display: inline-flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.devise-wrapper {
+  max-width: rem-calc(960);
+  margin: 0 auto;
+  padding: 0 10px 0 10px;
+  border: solid 1px red;
+}
+
+.login-box {
+  display: flex;
+  text-align:center;
+  border: solid 1px pink;
+}
+
+
+/* ==========================================================================
+   SPLASHSCREEN
+   ========================================================================== */
+
+
+.spash_container {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  height: rem-calc(50);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -20%;
+  margin-top: rem-calc(-25);
+  padding-left: rem-calc(-190);
+}
+
+p {
+  float: left;
+  line-height: rem-calc(50);
+  font-size: 100%;
+  color: #888;
+}
+
+.scroller {
+  height: rem-calc(57);
+  line-height: rem-calc(50);
+  float: left;
+  margin-left: rem-calc(5);
+  margin-right: rem-calc(10);
+  overflow: hidden;
+  padding-left: rem-calc(30);
+}
+
+.scroller span {
+  display: block;
+  font-size: 100%;
+}
+
+
+.scroller .inner {
+  -webkit-animation: scroll 10s 1 ease-out;
+  -moz-animation: scroll 10s 1 ease-out;
+  animation: scroll 10s 1 ease-out;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+
+.blue {
+  color: black;
+  -webkit-animation: color 0.25s 1 linear both;
+  -moz-animation: color 0.25s 1 linear both;
+  animation: color 0.25s 1 linear both;
+
+  -webkit-animation-delay: 8s;
+  -moz-animation-delay: 8s;
+  animation-delay: 8s;
+
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+
+@-webkit-keyframes color {
+   1%  {color: #000;}
+   100% {color: #2c90c6;}
+}
+@-moz-keyframes color {
+   1%  {color: #000;}
+   100% {color: #2c90c6;}
+}
+@keyframes color {
+   1%  {color: #000;}
+   100% {color: #2c90c6;}
+}
+@-webkit-keyframes scroll {
+   11%  {margin-top: 0px;}
+   22%  {margin-top: 0px;}
+   33%  {margin-top: -50px;}
+   44%  {margin-top: -50px;}
+   55%  {margin-top: -100px;}
+   66%  {margin-top: -100px;}
+   77%  {margin-top: -150px;}
+   88%  {margin-top: -150px;}
+   100% {margin-top: -150px;}
+}
+@-moz-keyframes scroll {
+   11%  {margin-top: 0px;}
+   22%  {margin-top: 0px;}
+   33%  {margin-top: -50px;}
+   44%  {margin-top: -50px;}
+   55%  {margin-top: -100px;}
+   66%  {margin-top: -100px;}
+   77%  {margin-top: -150px;}
+   88%  {margin-top: -150px;}
+   100% {margin-top: -150px;}
+}
+
+@keyframes scroll {
+   11%  {margin-top: 0px;}
+   22%  {margin-top: 0px;}
+   33%  {margin-top: -50px;}
+   44%  {margin-top: -50px;}
+   55%  {margin-top: -100px;}
+   66%  {margin-top: -100px;}
+   77%  {margin-top: -150px;}
+   88%  {margin-top: -150px;}
+   100% {margin-top: -150px;}
+}

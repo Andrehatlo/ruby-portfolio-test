@@ -10,11 +10,14 @@ html
     == javascript_include_tag 'vendor/modernizr'
     == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     == csrf_meta_tags
+    link href="https://fonts.googleapis.com/css?family=Norican" rel="stylesheet" /
   body
     p.notice = notice
     p.alert = alert
-    header
-      == render 'layouts/navigation'
-    main[role="main"]
-      == render 'layouts/messages'
+
+    .wrapper
+      button#custom-btn.btn.draw-border = link_to t('devise.log_in'), new_user_session_path, class: 'blue'
+
+
+    .page
       == yield
