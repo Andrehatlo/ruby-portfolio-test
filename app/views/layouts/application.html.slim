@@ -11,6 +11,8 @@ html
     == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     == csrf_meta_tags
   body
+    p.notice = notice
+    p.alert = alert
     header
       == render 'layouts/navigation'
     main[role="main"]

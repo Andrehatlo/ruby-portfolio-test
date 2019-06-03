@@ -11,17 +11,26 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+
+# Custom:
+gem 'summernote-rails', '~> 0.8.10.0'
+gem 'devise'
+
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
 end
+
 group :development do
+  gem 'browser_sync_rails' # Autoreload browser : bundle exec rake browser_sync:start
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'foundation-rails', '~> 5.5'
 gem 'high_voltage'
@@ -29,6 +38,7 @@ gem 'jquery-rails'
 gem 'pg', '~> 0.18'
 gem 'simple_form'
 gem 'slim-rails'
+
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil
